@@ -188,8 +188,10 @@ func build(s string) (string, error) {
 							break
 						}
 						last--
-						if last >= 0 {
+						if l > 1 && last >= 0 {
 							result += strconv.Itoa(last)
+						} else if l == 1 {
+							result += strconv.Itoa(0)
 						}
 					}
 				}
