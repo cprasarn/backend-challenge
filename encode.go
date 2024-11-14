@@ -199,7 +199,12 @@ func build(s string) (string, error) {
 			}
 
 			rl := len(result)
-			result += string(result[rl-1])
+			if rl == 0 {
+				result += strconv.Itoa(0)
+				result += strconv.Itoa(0)
+			} else {
+				result += string(result[rl-1])
+			}
 			e = 0
 		}
 	}
