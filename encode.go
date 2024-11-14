@@ -182,18 +182,9 @@ func build(s string) (string, error) {
 						result += strconv.Itoa(j)
 						result += strconv.Itoa(j - 1)
 					} else {
-						rl = len(result)
-						last, err := strconv.Atoi(string(result[rl-1]))
-						if err != nil {
-							break
-						}
-						last--
-						if l > 1 && last >= 0 {
-							result += strconv.Itoa(last)
-						} else if l == 1 {
-							result += strconv.Itoa(0)
-						}
+						result += strconv.Itoa(j - 1)
 					}
+					rl = len(result)
 				}
 				l = 0
 			} else if l > 9 {
